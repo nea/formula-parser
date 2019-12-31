@@ -689,8 +689,8 @@ class FormulaParser implements IFormulaParser
 
         // Check set variables
         for ($i=0; $i<=count($this->valid_variables)-1; $i++) { 
-            if (strlen($this->valid_variables[$i]) != 1  
-            || !preg_match('/^([a-zA-Z])$/', $this->valid_variables[$i]) === 1
+            if (strlen($this->valid_variables[$i]) < 1  
+            || !preg_match('/^([a-zA-Z]+)$/', $this->valid_variables[$i]) === 1
             || $this->valid_variables[$i] == "e") {
                 $this->correct = false;
                 $this->error_type = 4;
